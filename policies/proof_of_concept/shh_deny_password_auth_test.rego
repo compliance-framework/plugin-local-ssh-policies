@@ -1,4 +1,4 @@
-package ssh.deny_password_auth
+package compliance_framework.remote_ssh.deny_password_auth
 
 test_deny_password_auth_off {
 	count(violation) == 0 with input as {
