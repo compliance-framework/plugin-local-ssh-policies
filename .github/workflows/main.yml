@@ -8,6 +8,9 @@ jobs:
   Test-And-Check:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: write
+
     steps:
       - name: Check out repository code
         uses: actions/checkout@v4
