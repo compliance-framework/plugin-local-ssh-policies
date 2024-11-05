@@ -24,7 +24,9 @@ jobs:
         run: opa check policies
 
       - name: Run OPA Build
-        run: opa build -b policies -o dist/bundle.tar.gz
+        run: |
+          mkdir -p dist/
+          opa build -b policies -o dist/bundle.tar.gz
 
       - name: Bundle
         uses: softprops/action-gh-release@v2
