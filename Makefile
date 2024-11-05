@@ -37,18 +37,18 @@ endif
 
 test:
 	@echo "Testing policies..."
-	@OPA test ssh
+	@OPA test policies
 
 # Build the policies
 check:
 	@echo "Checking policies..."
-	@opa check ssh
+	@opa check policies
 
 # Bundle the policies into a tarball for OCI registry
 build:
 	@echo "Bundling policies..."
 	@mkdir -p dist/
-	@opa build -b ssh -o dist/bundle.tar.gz
+	@opa build -b policies -o dist/bundle.tar.gz
 
 # Push the bundled policies to an OCI-compliant registry
 push: build

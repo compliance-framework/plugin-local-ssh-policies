@@ -3,13 +3,13 @@
 ## Validating Metadata for Compliance Framework
 
 ```shell
-concom verify -p ssh/
+concom verify -p policies/
 ```
 
 ## Testing
 
 ```shell
-opa test ssh
+opa test policies
 ```
 
 ### Writing policies.

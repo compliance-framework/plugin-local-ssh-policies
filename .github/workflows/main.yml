@@ -18,7 +18,7 @@ jobs:
           version: latest
 
       - name: Run OPA Tests
-        run: make test
+        run: opa test policies
 
       - name: Run OPA Check
-        run: make check
+        run: opa check policies
