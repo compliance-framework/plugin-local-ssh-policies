@@ -1,3 +1,6 @@
+# METADATA
+# title: Verify password authentication is disabled
+# description: Verifies that password authentication is not enabled for ssh on a machine. This helps prevent unauthorised brute force attacks.
 package compliance_framework.local_ssh.deny_password_auth
 
 import future.keywords.in

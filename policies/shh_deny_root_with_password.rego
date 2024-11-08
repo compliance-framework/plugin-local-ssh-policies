@@ -4,5 +4,5 @@ import future.keywords.in
 
 violation[{"msg": msg}] {
 	not "without-password" in input.permitrootlogin
-	msg := "Host SSH should not allow the use of password authentication. Set `passwordauthentication` to `no`"
+	msg := "Root can login with password"
 }
