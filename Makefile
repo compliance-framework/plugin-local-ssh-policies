@@ -45,7 +45,7 @@ check:
 	@opa check policies
 
 # Bundle the policies into a tarball for OCI registry
-build:
+build: clean
 	@echo "Bundling policies..."
 	@mkdir -p dist/
 	@opa build -b policies -o dist/bundle.tar.gz
