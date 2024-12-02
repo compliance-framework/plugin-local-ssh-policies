@@ -1,5 +1,9 @@
 # SSH policies for use in Compliance Framework Local SSH Plugin
 
+## Requirements
+
+Install [opa](https://www.openpolicyagent.org/docs/latest/#running-opa) for testing & building the bundles.
+
 ## Testing
 
 
