@@ -7,7 +7,7 @@ package compliance_framework.local_ssh.deny_root_with_password
 
 import future.keywords.in
 
-tasks := [
+activities := [
     {
         "title": "Validate Root Login with Password Setting",
         "description": "Check that the SSH configuration does not allow the root account to log in using passwords.",

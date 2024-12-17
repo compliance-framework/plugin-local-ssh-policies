@@ -8,7 +8,7 @@ package compliance_framework.local_ssh.ensure_public_key_auth
 
 import future.keywords.in
 
-tasks := [
+activities := [
     {
         "title": "Validate PubkeyAuthentication Setting",
         "description": "Verify that the SSH configuration allows public key-based authentication.",

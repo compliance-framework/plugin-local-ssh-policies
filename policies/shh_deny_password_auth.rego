@@ -8,7 +8,7 @@ package compliance_framework.local_ssh.deny_password_auth
 
 import future.keywords.in
 
-tasks := [
+activities := [
     {
         "title": "Validate PasswordAuthentication Setting",
         "description": "Verify that the SSH configuration does not allow password-based authentication.",
