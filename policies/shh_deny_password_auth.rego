@@ -8,8 +8,6 @@ package compliance_framework.local_ssh.deny_password_auth
 
 import future.keywords.in
 
-schedule := "* * * * *"
-
 tasks := [
     {
         "title": "Validate PasswordAuthentication Setting",

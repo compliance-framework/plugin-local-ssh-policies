@@ -8,8 +8,6 @@ package compliance_framework.local_ssh.ensure_public_key_auth
 
 import future.keywords.in
 
-schedule := "* * * * *"
-
 tasks := [
     {
         "title": "Validate PubkeyAuthentication Setting",

@@ -7,8 +7,6 @@ package compliance_framework.local_ssh.deny_root_with_password
 
 import future.keywords.in
 
-schedule := "* * * * *"
-
 tasks := [
     {
         "title": "Validate Root Login with Password Setting",
