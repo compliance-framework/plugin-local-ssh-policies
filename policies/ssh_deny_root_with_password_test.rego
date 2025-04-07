@@ -1,4 +1,4 @@
-package compliance_framework.local_ssh.deny_root_with_password
+package compliance_framework.deny_password_based_root_ssh
 
 test_ssh_password_off if {
     count(violation) == 0 with input as {

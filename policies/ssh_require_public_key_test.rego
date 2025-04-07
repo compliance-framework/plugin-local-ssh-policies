@@ -1,4 +1,4 @@
-package compliance_framework.local_ssh.require_public_key
+package compliance_framework.require_key_based_ssh
 
 test_ssh_password_off if {
     count(violation) == 0 with input as {

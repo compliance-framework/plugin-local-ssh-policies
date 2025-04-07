@@ -1,7 +1,13 @@
-package compliance_framework.local_ssh.require_public_key
+package compliance_framework.require_key_based_ssh
 
 import future.keywords.in
 
+violation[{}] if {
+	not "yes" in input.pubkeyauthentication
+}
+
+title := "SSH should use key based authentication"
+description := "Key based SSH authentication is considered secure. Key-based authentication should be used to secure remote access to sensitive hosts"
 controls := [
     # SAMA Cyber Security Framework v1.0
     # https://rulebook.sama.gov.sa/en/cyber-security-framework-2
@@ -93,11 +99,3 @@ controls := [
         "control-id": "3.2.15",
     },
 ]
-
-violation[{
-    "title": "Public key authentication is not enabled",
-    "description": "Public key authentication should be used for strong and secure authentication on host machines.",
-    "remarks": "Enabled public key authentication for host machine."
-}] if {
-	not "yes" in input.pubkeyauthentication
-}
