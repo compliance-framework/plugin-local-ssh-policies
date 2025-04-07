@@ -1,7 +1,13 @@
-package compliance_framework.local_ssh.deny_root_with_password
+package compliance_framework.deny_password_based_root_ssh
 
 import future.keywords.in
 
+violation[{}] if {
+	not "without-password" in input.permitrootlogin
+}
+
+title := "Root account should not use password authentication"
+description := "Root accounts using password is a severe security flaw, by which a brute force attack could gain elevated access to a host machine."
 controls := [
     # SAMA Cyber Security Framework v1.0
     # https://rulebook.sama.gov.sa/en/cyber-security-framework-2
@@ -93,11 +99,3 @@ controls := [
         "control-id": "3.2.15",
     },
 ]
-
-violation[{
-    "title": "Root account should not be allowed to use password authentication",
-    "description": "Root accounts using password is a severe security flaw, by which a brute force attack could gain elevated access to a host machine.",
-    "remarks": "Remove password authentication from the root account, and use public keys or certificates as a stronger authentication method."
-}] if {
-	not "without-password" in input.permitrootlogin
-}

@@ -1,17 +1,13 @@
-# Ensure that SSH password are never used on host machines, as this is insecure to brute force attacks,
-# unless paired with something like fail2ban.
-#
-# METADATA
-# title: Verify password authentication is disabled
-# description: Verifies that password authentication is not enabled for ssh on a machine. This helps prevent unauthorised brute force attacks.
-# custom:
-#   controls:
-#     - AC-1
-#   schedule: "* * * * * *"
-package compliance_framework.local_ssh.deny_password_auth
+package compliance_framework.deny_password_based_ssh
 
 import future.keywords.in
 
+violation[{}] if {
+	"yes" in input.passwordauthentication
+}
+
+title := "SSH should disable password based authentication"
+description := "Password based SSH authentication is considered insecure. Key-based authentication should be used to secure remote access to sensitive hosts"
 controls := [
     # SAMA Cyber Security Framework v1.0
     # https://rulebook.sama.gov.sa/en/cyber-security-framework-2
@@ -103,11 +99,3 @@ controls := [
         "control-id": "3.2.15",
     },
 ]
-
-violation[{
-    "title": "Host SSH is using password authentication.",
-    "description": "Host SSH should not use password, as this is insecure to brute force attacks from external sources.",
-    "remarks": "Migrate to using SSH Public Keys, and switch off password authentication."
-}] if {
-	"yes" in input.passwordauthentication
-}
