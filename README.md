@@ -6,9 +6,8 @@ Install [opa](https://www.openpolicyagent.org/docs/latest/#running-opa) for test
 
 ## Testing
 
-
 ```shell
-opa test policies
+make test
 ```
 
 ## Bundling
@@ -17,13 +16,13 @@ Policies are built into bundle to make distribution easier.
 
 You can easily build the policies by running 
 ```shell
-opa build -b policies -o dist/bundle.tar.gz
+make build
 ```
 
 ## Running policies locally
 
 ```shell
-opa eval -I -b policies -f pretty data.compliance_framework.local_ssh <<EOF 
+opa eval -I -b policies -f pretty data.compliance_framework <<EOF 
 {
   "passwordauthentication": [
     "yes"
@@ -43,15 +42,17 @@ EOF
 Policies are written in the [Rego](https://www.openpolicyagent.org/docs/latest/policy-language/) language.
 
 ```rego
-package ssh.deny_password_auth
+package compliance_framework.deny_password_auth
 
 import future.keywords.in
 
-violation[{
-    "title": "Host SSH is using password authentication.",
-    "description": "Host SSH should not use password, as this is insecure to brute force attacks from external sources.",
-    "remarks": "Migrate to using SSH Public Keys, and switch off password authentication."
-}] {
+violation[{}] {
 	"yes" in input.passwordauthentication
+}
+
+title := "SSH should disable password based authentication"
+description := "Password based SSH authentication is considered insecure. Key-based authentication should be used to secure remote access to sensitive hosts"
+labels := {
+    "severity": "high"
 }
 ```
