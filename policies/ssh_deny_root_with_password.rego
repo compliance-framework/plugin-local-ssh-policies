@@ -7,7 +7,7 @@ risk_templates := [{
   "title": "Direct Privileged Remote Access via Root Password Authentication",
   "statement": "Allowing root SSH login with password enables attackers to directly target the most privileged account using brute force or credential stuffing. Successful compromise provides immediate full system control without requiring privilege escalation, enabling persistence, data access, and lateral movement.",
   "likelihood_hint": "high",
-  "impact_hint": "high",
+  "impact_hint": "critical",
   "violation_ids": ["ssh_root_password_auth"],
   "threat_refs": [
     {
