@@ -1,0 +1,2 @@
+lisa-design:
+W3-S2-T02: default branch stays master (push triggers [master], PR base master). Manifest seeded at 0.3.1 = releases/latest tag v0.3.1 (final, vX.Y.Z), commit 7318e5f is an ancestor of master; no bootstrap-sha. No version.txt added by hand (release-please adds it in the first release PR). release-please-config.json top-level keys equal workflows release-please/defaults.json at v1.5.2. README has no release section, so it is unchanged. Bundle built from policies/ only (opa build --bundle policies), content identical to the old `opa build -b policies`.
