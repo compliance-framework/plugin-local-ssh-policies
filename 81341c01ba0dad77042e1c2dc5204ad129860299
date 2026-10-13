@@ -1,0 +1,6 @@
+lisa-design:
+- push.yaml and push.yml were duplicates (both only called test.yml, which ran opa test/check on OPA 1.6.0); all three removed, replaced by ci.yml calling ci-policies.yml @ workflows v1.5.1.
+- ci.yml copied verbatim from mock-plugin-policies-1 except push trigger branches: [master] (repo default branch is master).
+- Rego changes are pure `opa fmt` 1.14.1 output; no Regal errors existed, so no ignores or renames. The 3 Regal warnings (equals-over-count in tests) are left as-is by user decision (fix errors only).
+- `import future.keywords.in` left in place: opa fmt keeps it and removing it is not required by CI.
+- release.yml / build-and-upload.yml untouched (W3 replaces them); actionlint v1.7.12 passes on them locally.
